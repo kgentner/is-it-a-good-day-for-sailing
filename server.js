@@ -1,4 +1,5 @@
 'use strict';
+/*Thanks to Jacob Shafer, Stephanie Lingwood, and Linda Mummy for the help.*/
 
 var express = require('express');
 var request = require('superagent');
@@ -18,7 +19,7 @@ app.post('/', function(req, res) {
   request
     .get(wunderURL)
     .end(function(err, wunderData) {
-      var answer; // the answer which will be returned to $ajax call in main.js
+      var answer;
       var parsedData = JSON.parse(wunderData.text);
 
       var knots = (parsedData.current_observation.wind_mph) * (0.87);
@@ -34,7 +35,8 @@ app.post('/', function(req, res) {
       } else {
         answer = 'NO';
       }
-      res.json(answer);
+      //the answer is returned as json to $ajax call in main.js
+      res.json({msg: answer});
     });
 });
 

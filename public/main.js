@@ -13,20 +13,21 @@ function showLocation(position) {
     type: 'POST',
     data: {lat:latitude, lon: longitude},
     success: function(data) {
-      if (data === 'YES') {
-        $('#answer').html('<p id="yes">' + data + '</p>');
+      console.log(data);
+      if (data.msg === 'YES') {
+        $('#answer').html('<p id="yes">' + data.msg + '</p>');
       } else {
-        $('#answer').html('<p id="no">' + data + '</h1>');
+        $('#answer').html('<p id="no">' + data.msg + '</h1>');
       }
     }
   });
 }
 
-//Run geolocation on load
+//Run HTML5 Geolocation on load
 (document).ready(function() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showLocation, function(err) {
-      if (err.code === 1) {
+      if (err) {
         $('#answer')
         .html('<p>You Must Allow Access to Your Location to Find Out.</p>');
       }
