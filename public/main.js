@@ -24,7 +24,7 @@ function showLocation(position) {
 }
 
 //Run HTML5 Geolocation on load
-(function($) {
+(document).ready(function() {
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showLocation, function(err) {
