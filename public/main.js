@@ -13,7 +13,7 @@ function showLocation(position) {
     type: 'POST',
     data: {lat:latitude, lon: longitude},
     success: function(data) {
-      console.log(data);
+      //console.log(data);
       if (data.msg === 'YES') {
         $('#answer').html('<p id="yes">' + data.msg + '</p>');
       } else {
@@ -24,7 +24,8 @@ function showLocation(position) {
 }
 
 //Run HTML5 Geolocation on load
-(document).ready(function() {
+(function($) {
+
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showLocation, function(err) {
       if (err) {
