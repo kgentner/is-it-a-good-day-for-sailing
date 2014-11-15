@@ -2,10 +2,11 @@
   "name": "is-it-a-good-day-for-sailing",
   "version": "1.0.0",
   "description": "is-it-a-good-day-for-sailing ============================",
-  "main": "Gruntfile.js",
+  "main": "server.js",
   "dependencies": {
     "body-parser": "^1.9.2",
-    "express": "^4.10.2"
+    "express": "^4.10.2",
+    "superagent": "^0.21.0"
   },
   "devDependencies": {
     "chai": "^1.10.0",
@@ -15,17 +16,19 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-jscs": "^0.8.1",
     "grunt-simple-mocha": "^0.4.0",
-    "mocha": "^2.0.1",
-    "superagent": "^0.21.0"
+    "mocha": "^2.0.1"
   },
   "scripts": {
-    "test": "node_modules/grunt-cli/bin/grunt"
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "0.10.x"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/kgentner/is-it-a-good-day-for-sailing.git"
   },
-  "author": "",
+  "author": "kgentner",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kgentner/is-it-a-good-day-for-sailing/issues"
