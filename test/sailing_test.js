@@ -19,7 +19,7 @@ describe('Find Wunderground City with Latitude and Longitude', function() {
     chai.request(wunderURL)
     .get('/')
     .end(function(err, res) {
-      //console.log(res.body);
+      console.log(res.body);
       expect(res.body.location.city).to.eql('San Francisco');
       done();
     });
