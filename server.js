@@ -19,22 +19,14 @@ app.post('/', function(req, res) {
   request
     .get(wunderURL)
     .end(function(err, wunderData) {
-      var answer;
       var parsedData = JSON.parse(wunderData.text);
 
       var knots = (parsedData.current_observation.wind_mph) * (0.87);
       var outlook = parsedData.current_observation.weather;
       var temperature = parsedData.current_observation.temp_f;
-      //console.log(parsedData.current_observation);
 
-      if (((knots > 5) && (knots < 12)) &&
-          (temperature > 40) &&
-          (outlook === 'Partly Cloudy' || 'Clear' || 'Sunny'))
-      {
-        answer = 'YES';
-      } else {
-        answer = 'NO';
-      }
+      var answer = (((knots > 5) && (knots < 12)) && (temperature > 40) &&
+        (outlook === 'Partly Cloudy' || 'Clear' || 'Sunny')) ? 'YES' : 'NO';
       //the answer is returned as json to $ajax call in main.js
       res.json({msg: answer});
     });
