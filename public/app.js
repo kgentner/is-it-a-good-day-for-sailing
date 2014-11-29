@@ -1,7 +1,7 @@
 'use strict';
 var geoLocate = require('./geoLocate');
 
-//run geoLocate on load.
+//on load, run geolocate
 (document).ready(function() {
   geoLocate();
 }());
