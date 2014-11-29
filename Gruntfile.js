@@ -7,21 +7,36 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     jshint: {
-      all: ['public/*.js', 'server.js'],
+      all: ['server.js',
+      'public/app.js',
+      'public/geoLocate.js',
+      'public/showLocation.js',
+      'public/postCoordinates.js',
+      'Gruntfile.js',
+      'test/sailing_test.js'],
       options: {
         jshintrc: true
       }
     },
 
     jscs: {
-      src: ['public/**/*.js', 'server.js'],
+      src: ['server.js',
+      'public/app.js',
+      'public/geoLocate.js',
+      'public/showLocation.js',
+      'public/postCoordinates.js',
+      'Gruntfile.js',
+      'test/sailing_test.js'],
       options: {
         config: '.jscsrc'
       }
     },
 
     simplemocha: {
-      src: ['test/**/*.js']
+      src: ['test/**/*.js'],
+      options: {
+        timeout: 3000
+      }
     }
   });
   grunt.registerTask('test', ['jshint', 'jscs', 'simplemocha']);
