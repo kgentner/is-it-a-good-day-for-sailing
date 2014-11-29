@@ -1,6 +1,6 @@
 'use strict';
-var $ = require('../jquery');
-var showLocation = require('showLocation');
+var $ = require('jquery');
+var showLocation = require('./showLocation');
 
 var geoLocate = function() {
   if (navigator.geolocation) {

@@ -1,6 +1,6 @@
 'use strict';
 
-var $ = require('jquery');
+var postCoordinates = require('./postCoordinates');
 
 var showLocation = function(position) {
   //determine latitude and longitude
@@ -10,19 +10,7 @@ var showLocation = function(position) {
   //make a post request via ajax to the server
   //sending latitude and longitude in json
   //expect a 'yes' or 'no' response
-  $.ajax({
-    url: '/',
-    type: 'POST',
-    data: {lat:latitude, lon: longitude},
-    success: function(data) {
-      //console.log(data);
-      if (data.msg === 'YES') {
-        $('#answer').html('<p id="yes">' + data.msg + '</p>');
-      } else {
-        $('#answer').html('<p id="no">' + data.msg + '</h1>');
-      }
-    }
-  });
+  postCoordinates(latitude, longitude);
 };
 
 module.exports = showLocation;
