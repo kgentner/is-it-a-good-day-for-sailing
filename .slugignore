@@ -1,0 +1,8 @@
+.jscsrc
+.jshintrc
+.travis.yml
+Gruntfile.js
+package.json
+README.md
+test/sailing_test.js
+node_modules
