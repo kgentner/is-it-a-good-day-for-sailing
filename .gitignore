@@ -32,5 +32,8 @@ node_modules
 
 #Build & Bundle.js from Browserify
 build/
+bower_components
+test/test_bundle.js
 bundle.js
+**/*.sw?
 
