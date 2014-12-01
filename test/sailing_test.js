@@ -4,6 +4,7 @@ var chaihttp = require('chai-http');
 var expect = chai.expect;
 
 chai.use(chaihttp);
+require('../server');
 
 var latitude = 37.77500916;
 var longitude = -122.41825867;
@@ -12,7 +13,22 @@ var herokuUrl = 'https://isitagooddayforsailing.herokuapp.com/';
 var wunderURL = 'http://api.wunderground.com/api/' + process.env.WUNDERAPI +
 '/geolookup/conditions/q/' + latitude + ',' + longitude + '.json';
 
-describe('Find Wunderground City with Latitude and Longitude', function() {
+describe('Server API', function() {
+  it('should return JSON with a message of NO or YES', function(done) {
+    chai.request('http://localhost:3000')
+    .post('/')
+    .type('form')
+    .send({lat:latitude, lon: longitude})
+    .end(function(err, res) {
+      expect(err).to.eql(null);
+      expect('Content-Type', /json/);
+      expect(res.body.msg).to.equal('NO' || 'YES');
+      done();
+    });
+  });
+});
+
+describe('Wunderground API with Latitude and Longitude', function() {
   it('should return the correct city', function(done) {
     chai.request(wunderURL)
     .get('/')
