@@ -30,5 +30,9 @@ node_modules
 #Mac OS X
 .DS_Store
 
-#Browserify bundles
+#Build & Bundle.js from Browserify
+build/
+bower_components
+test/test_bundle.js
 bundle.js
+**/*.sw?

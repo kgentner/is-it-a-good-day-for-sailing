@@ -1,4 +1,5 @@
 'use strict';
+var $ = require('jquery');
 
 function showLocation(position) {
   //determine latitude and longitude
@@ -13,8 +14,7 @@ function showLocation(position) {
     type: 'POST',
     data: {lat:latitude, lon: longitude},
     success: function(data) {
-      //console.log(data);
-      if (data.msg === 'YES') {
+      if (data.msg === 'Ahoy Matey, Hoist the Jolly Roger and Set Sail!') {
         $('#answer').html('<p id="yes">' + data.msg + '</p>');
       } else {
         $('#answer').html('<p id="no">' + data.msg + '</h1>');
