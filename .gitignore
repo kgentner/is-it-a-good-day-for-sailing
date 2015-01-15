@@ -36,4 +36,3 @@ bower_components
 test/test_bundle.js
 bundle.js
 **/*.sw?
-
