@@ -26,7 +26,7 @@ module.exports = function(grunt) {
     simplemocha: {
       src: ['test/**/*.js'],
       options: {
-        timeout: 5000
+        timeout: 10000
       }
     },
 
@@ -39,7 +39,8 @@ module.exports = function(grunt) {
     copy: {
       dev: {
         cwd: 'app/',
-        src: ['**/*.html', 'css/**/*.css'],
+        src: ['**/*.html', 'css/**/*.css', 'assets/*.svg',
+        'assets/*.jpg', 'assets/*.png'],
         expand: true,
         dest: 'build/'
       }

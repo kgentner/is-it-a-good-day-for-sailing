@@ -1,20 +1,24 @@
-
-h2 {
-    font-family: "Arial";
-    text-align: center;
-}
-
-div {
-    font-family: "Arial";
+body {
+    background-color: #ADEAEA;
+    font-family: "Skia", "Arial";
     text-align: center;
 }
 
 #yes {
     color: green;
-    font-size: 500%;
 }
 
 #no {
     color: red;
-    font-size: 500%;
 }
+
+.bubble {
+  background-color: white;
+  border: 0.2em solid;
+  border-radius: 25px;
+  padding: 0.3em;
+  top: 1em;
+  font-size: 1em;
+  margin: 15px;
+}
+

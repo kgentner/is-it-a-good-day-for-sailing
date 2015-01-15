@@ -1,5 +1,4 @@
 'use strict';
-/*Thanks to Jacob Shafer, Stephanie Lingwood, and Linda Mummy for the help.*/
 
 var express = require('express');
 var request = require('superagent');
@@ -26,7 +25,8 @@ app.post('/', function(req, res) {
       var temperature = parsedData.current_observation.temp_f;
 
       var answer = (((knots > 5) && (knots < 12)) && (temperature > 40) &&
-        (outlook === 'Partly Cloudy' || 'Clear' || 'Sunny')) ? 'YES' : 'NO';
+        (outlook === 'Partly Cloudy' || 'Clear' || 'Sunny')) ?
+      'Ahoy Matey, Hoist the Jolly Roger and Set Sail!' : 'Arrr!  It\'s not in the starrrs today.';
       //the answer is returned as json to $ajax call in main.js
       res.json({msg: answer});
     });
