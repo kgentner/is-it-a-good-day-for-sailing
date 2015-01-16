@@ -14,7 +14,7 @@ var wunderURL = 'http://api.wunderground.com/api/' + process.env.WUNDERAPI +
 '/geolookup/conditions/q/' + latitude + ',' + longitude + '.json';
 
 describe('Server API', function() {
-  it('should return JSON with a pirate-language version of NO or YES', function(done) {
+  it('should return a JSON message', function(done) {
     chai.request('http://localhost:3000')
     .post('/')
     .type('form')
@@ -22,8 +22,7 @@ describe('Server API', function() {
     .end(function(err, res) {
       expect(err).to.eql(null);
       expect('Content-Type', /json/);
-      expect(res.body.msg).to.equal(
-        'Arrr!  It\'s not in the starrrs today.' || 'Ahoy Matey, Hoist the Jolly Roger and Set Sail!');
+      expect(res.body.msg).to.be.a('string');
       done();
     });
   });
