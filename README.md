@@ -1,5 +1,7 @@
-is it a good day for sailing? (salty seadog version)
-========================================================
+is it a good day for sailing?
+==============================
+###(salty seadog version)
+<br>
 <img src=https://travis-ci.org/kgentner/is-it-a-good-day-for-sailing.svg?branch=browserify></img>
 
 <a href="https://isitagooddayforsailing.herokuapp.com/">Click here to see it on heroku</a>
@@ -31,5 +33,3 @@ Based on these responses, an answer is determined and returned.
 
 ####Deployment
 * Heroku
-
-
