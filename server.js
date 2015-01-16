@@ -25,7 +25,7 @@ app.post('/', function(req, res) {
       var temperature = parsedData.current_observation.temp_f;
 
       var answer = (((knots > 5) && (knots < 12)) && (temperature > 40) &&
-        (outlook === 'Partly Cloudy' || 'Clear' || 'Sunny')) ?
+        (outlook === 'Partly Cloudy' || outlook === 'Clear' || outlook === 'Sunny')) ?
       'Ahoy Matey, Hoist the Jolly Roger and Set Sail!' : 'Arrr!  It\'s not in the starrrs today.';
       //the answer is returned as json to $ajax call in main.js
       res.json({msg: answer});
