@@ -2,7 +2,7 @@
 
 ### (salty seadog version)
 
-<img src=https://travis-ci.org/kgentner/is-it-a-good-day-for-sailing.svg?branch=browserify></img>
+<img src='https://travis-ci.org/kgentner/is-it-a-good-day-for-sailing.svg?branch=browserify'></img>
 
 <a href="https://isitagooddayforsailing.herokuapp.com/">Click here to see it on heroku</a>
 
