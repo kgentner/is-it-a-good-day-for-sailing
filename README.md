@@ -7,7 +7,7 @@
 <a href="https://isitagooddayforsailing.herokuapp.com/">Click here to see it on heroku</a>
 
 ### Summary
-This application finds the current weather at the user's location and reports whether or not it is a good day to go sailing (using pirate vernacular).
+This application finds the current weather at the user's location and reports whether or not it is a good day to go sailing (using pirate vernacular, of course).
 
 ### Details
 Using HTML5's geolocate functionality, an AJAX 'post' request is used to send the latitude and longitude of the user to the server.
